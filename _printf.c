@@ -1,11 +1,22 @@
 #include "main.h"
 
-void print_buffer(char buffer[], int *buff_ind);
+/**
+ * print_buffer - Writes the contents of the buffer to standard output if it's not empty.
+ * @buffer: Array of characters.
+ * @buff_ind: Index representing the length of the buffer.
+ */
+void print_buffer(char buffer[], int *buff_ind)
+{
+	if (*buff_ind > 0)
+		write(1, &buffer[0], *buff_ind);
+
+	*buff_ind = 0;
+}
 
 /**
- * _printf - Printf function
- * @format: format.
- * Return: Printed chars.
+ * _printf - Custom printf function that handles format strings.
+ * @format: The format string.
+ * Return: The number of characters printed.
  */
 int _printf(const char *format, ...)
 {
@@ -50,17 +61,3 @@ int _printf(const char *format, ...)
 
 	return (printed_chars);
 }
-
-/**
- * print_buffer - Prints the contents of the buffer if it exists
- * @buffer: Array of chars
- * @buff_ind: Index at which to add next char, represents the length.
- */
-void print_buffer(char buffer[], int *buff_ind)
-{
-	if (*buff_ind > 0)
-		write(1, &buffer[0], *buff_ind);
-
-	*buff_ind = 0;
-}
-

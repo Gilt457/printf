@@ -3,10 +3,10 @@
 /**
  * get_precision - Determines the printing precision.
  * @format: A formatted string in which the parameters will be printed.
- * @i: Argument list to be printed.
- * @list: a collection of arguments.
+ * @i: Pointer to the current position in the format string.
+ * @list: A collection of arguments.
  *
- * Return: Precision.
+ * Return: Precision or -1 if not found.
  */
 int get_precision(const char *format, int *i, va_list list)
 {
@@ -14,7 +14,7 @@ int get_precision(const char *format, int *i, va_list list)
 	int precision = -1;
 
 	if (format[curr_i] != '.')
-		return (precision);
+		return precision;
 
 	precision = 0;
 
@@ -32,10 +32,12 @@ int get_precision(const char *format, int *i, va_list list)
 			break;
 		}
 		else
+		{
 			break;
+		}
 	}
 
 	*i = curr_i - 1;
 
-	return (precision);
+	return precision;
 }

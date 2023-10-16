@@ -1,8 +1,9 @@
-This team project is part of the first year curriculum of ALX. _printf replicates the C standard library printf() function.
+This team project is part of ALX's first year curriculum. _printf emulates the printf() function from the C standard library.
 
-What you should learn from this project:
+What you should take away from this project is:
 
-How to use git in a team setting
-Applying variadic functions to a big project
-The complexities of printf
-Managing a lot of files and finding a good workflow
+How to Use Git in a Team Environment
+Using variadic functions on a large project
+Printf's complexities
+Managing a large number of files and developing a suitable workflow                                                   
+

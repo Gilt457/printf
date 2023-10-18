@@ -12,7 +12,7 @@ int _printf(const char *format, ...) {
 
     va_start(list, format);
 
-    for (; format[i]; i++) {
+    while (format[i]) {
         if (format[i] != '%') {
             buffer[buff_ind++] = format[i];
             if (buff_ind == BUFF_SIZE)
